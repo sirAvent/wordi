@@ -1,5 +1,5 @@
 # wordis
-#### wordis is a Discord bot that allows you to play Wordle!
+#### wordi is a Discord bot that allows you to play Wordle!
 Created with Python and discord.py
 The bot is currently active and deployed on its website!
 
