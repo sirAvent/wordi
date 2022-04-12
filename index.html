@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Avent Chiu</title>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet">
+
+        <!-- FontAwesome Cdn-->
+        <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+        <!-- Bootstrap Cdn-->
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+        <!-- Animated Headline-->
+        <link rel="stylesheet" href="animatedheadlines.css">
+        
+        <!-- Styling -->
+        <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+        <header id="home" class="header-top">
+            <div class="menu-top">
+                <nav class="holder transition">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                </nav>
+
+                <button class="menu-toggle transition" id="menu-toggle">
+                    <svg class="icon icon-menu-toggle" x="0px" y="0px" viewBox="0 0 100 100">
+                        <g class="svg-menu-toggle">
+                            <path class="line line-1" d="M5 13h90v14H5z" />
+                            <path class="line line-2" d="M5 43h90v14H5z" />
+                            <path class="line line-3" d="M5 73h90v14H5z" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="text-start-center">
+                <img class="logo-icon" src="./wordislogo.png">
+                
+                <div class="grid-container">
+                    <div>
+                        <h1>
+                            wordi
+                        </h1>
+                        <p>
+                            wordi is a bot that delivers a game of Wordle to your Discord server!
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="grid-container">
+                    <div>
+                        <a target="_blank"  
+                        href="https://discord.com/oauth2/authorize?client_id=940851458184740885&scope=bot">
+                            <button class="start-btn">Invite</button>
+                        </a>
+
+                        <a target="_blank"
+                            href="https://discord.gg/kRWPQ7C8A8">
+                            <button class="add-btn">Support Server</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-mouse">
+                <a href="#about">
+                    <div class="scroll-icon"></div>
+                </a>
+            </div>
+        </header>
+
+        <div id="about"></div>
+        <div class="content grid-container">
+            <div class="abt-content">
+                <h1>!play</h1>
+                <p>Type this command to start your game of Wordle! Every game is a randomly selected 5-letter word. After that start sending your guesses in the chat! Just like the game you have 6 tries to guess the word correctly.</p>
+            </div>
+
+            <div class="abt-content">
+                <img alt="Bot Demo" id="demo" src="https://cdn.discordapp.com/attachments/808213206253961216/950527559794303036/wordle.gif">
+            </div>
+        </div>
+        <h2 class="footer">CREATED BY <a target="_blank" href="https://github.com/sirAvent">AVENT</a></h2>
+
+
+
+        <!-- JQuery Cdn js-->
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+        <script src="animatedheadline.js"></script>
+
+        <!-- Bootstrap Cdn js-->
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+
+        <!-- JavaScript Code-->
+        <script>
+            
+            $(function(){
+                "use strict";
+                $('.social-media [data-toggle="tooltip"]').tooltip({
+                    placement: 'bottom'
+                });
+
+                var button = document.getElementById('menu-toggle');
+                button.onclick = function(){
+                    if (-1 !== button.className.indexOf( 'opened') ) {
+                        button.className = button.className.replace(' opened', '');
+                        button.setAttribute('aria-expanded','false');
+                    } else{
+                        button.className += ' opened';
+                        button.setAttribute( 'aria-expanded', 'true');
+                    }
+                };
+
+                var button_tog = $('.menu-toggle');
+                button_tog.on("click", function(){
+                    if ($('.menu-toggle').hasClass('opened')){
+                        $('.holder').addClass('active');
+                    } else{
+                        $('.holder').removeClass('active');
+                    }
+                });
+            });
+
+        </script>
+    </body>
+</html>
