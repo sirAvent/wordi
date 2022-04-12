@@ -1,6 +1,6 @@
 # wordis
-### wordis is a Discord bot that allows you to play Wordle!
-### Created with Python and discord.py
+#### wordis is a Discord bot that allows you to play Wordle!
+Created with Python and discord.py
 
 ## Website
 
