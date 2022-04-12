@@ -4,7 +4,7 @@ Created with Python and discord.py
 The bot is currently active and deployed on its website!
 
 ## Website
-https://siravent.github.io/wordis/
+https://siravent.github.io/wordi/
 
 ## Demo
 ![image](https://cdn.discordapp.com/attachments/808213206253961216/950527559794303036/wordle.gif)
