@@ -29,7 +29,6 @@ async def play(ctx):
         else:
             keylist.append(":regional_indicator_" + key + ": ")
     answer = dataList[random.randint(0,2314)]
-    answerList = []
     valid = True
     playCount = 0
     playing = True
@@ -38,6 +37,7 @@ async def play(ctx):
     history = ""
     playhist = ""
     timed = False
+    answer_arr = list(answer)
 
 
     if ctx.author.name not in current_users:
@@ -70,17 +70,10 @@ async def play(ctx):
                 else:
                     #guess is a valid word
                     playCount += 1
-                    
-                    fdict = dict()
-                    for achr in answer:
-                        if achr not in fdict:
-                            fdict[achr] = 1
-                        else:
-                            fdict[achr] += 1
-                    
+                                
                     for i, guessChr in enumerate(guess):
-                        if guessChr == answer[i]:
-                            fdict[guess[i]] -= 1
+                        if guessChr == answer_arr[i]:
+                            answer_arr[answer_arr.index(guessChr)] = '2'
                             result[i] = ":green_square:"
 
                         elif guessChr not in answer:
@@ -96,14 +89,14 @@ async def play(ctx):
                             
                     
                     for i, guessChr in enumerate(guess):
-                        if guessChr in answer and fdict[guessChr] > 0:
+                        if guessChr in answer_arr:
                             
                             result[i] = ":yellow_square:"
-                            fdict[guessChr] -= 1
-                        if guess[i] == answer[i]:
-                            result[i] = ":green_square:"
+                            answer_arr[answer_arr.index(guessChr)] = '2'
+                        
 
                     history+=(result[0] + result[1] +  result[2] +  result[3]+  result[4] + "\n")
+                    answer_arr = list(answer)
                     if guess == answer:
                         win = True
                         break
