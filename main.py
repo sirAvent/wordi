@@ -89,7 +89,7 @@ async def play(ctx):
                             
                     
                     for i, guessChr in enumerate(guess):
-                        if guessChr in answer_arr:
+                        if guessChr in answer_arr and result[i] != ":green_square:":
                             
                             result[i] = ":yellow_square:"
                             answer_arr[answer_arr.index(guessChr)] = '2'
